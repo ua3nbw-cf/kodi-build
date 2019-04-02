@@ -99,7 +99,7 @@ python-minimal rapidjson-dev swig scons unzip uuid-dev yasm zip zlib1g-dev libgb
 libgles2-mesa-dev libwayland-dev libwayland-egl1-mesa libcec-dev doxygen git autoconf libtool build-essential \
 libopencore-amrnb-dev libopencore-amrwb-dev librtmp-dev libtheora-dev libvo-amrwbenc-dev libvpx-dev libx264-dev \
 libx265-dev libxvidcore-dev libfdk-aac-dev libavresample-dev libffi-dev libexpat1-dev libxml2-dev xutils-dev \
-libpam0g-dev libjpeg-dev libcairo2-dev libxcb-composite0-dev libxcursor-dev libxkbcommon-dev libpixman-1-dev )
+libpam0g-dev libjpeg-dev libcairo2-dev libxcb-composite0-dev libxcursor-dev libxkbcommon-dev libpixman-1-dev libpugixml-dev)
 
 install_dependent_packages BUILD_KODI_ARM_DEPS_START[@]
 DEBIAN_FRONTEND=noninteractive
