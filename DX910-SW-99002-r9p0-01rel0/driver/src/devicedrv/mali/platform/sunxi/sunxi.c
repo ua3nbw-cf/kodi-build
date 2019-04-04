@@ -113,9 +113,10 @@ struct resource *mali_create_450mp4_resources(unsigned long address,
 
 static const struct of_device_id mali_dt_ids[] = {
 	{ .compatible = "allwinner,sun4i-a10-mali" },
-	{ .compatible = "allwinner,sun50i-h5-mali" },
 	{ .compatible = "allwinner,sun7i-a20-mali" },
 	{ .compatible = "allwinner,sun8i-h3-mali" },
+	{ .compatible = "allwinner,sun50i-a64-mali" },
+	{ .compatible = "allwinner,sun50i-h5-mali" },
 	{ .compatible = "arm,mali-400" },
 	{ .compatible = "arm,mali-450" },
 	{ /* sentinel */ },
@@ -138,7 +139,11 @@ int mali_platform_device_register(void)
 	struct device_node *np;
 	struct device *dev;
 	int ret, len;
+#if LINUX_VERSION_CODE >= KERNEL_VERSION(5,0,0)
+	mali_gpu_data.shared_mem_size = totalram_pages() * PAGE_SIZE;
+#else
 	mali_gpu_data.shared_mem_size = totalram_pages * PAGE_SIZE;
+#endif
 
 	np = of_find_matching_node(NULL, mali_dt_ids);
 	if (!np) {
@@ -177,6 +182,7 @@ int mali_platform_device_register(void)
 	if (of_device_is_compatible(np, "allwinner,sun4i-a10-mali") ||
 	    of_device_is_compatible(np, "allwinner,sun7i-a20-mali") ||
 	    of_device_is_compatible(np, "allwinner,sun8i-h3-mali")  ||
+	    of_device_is_compatible(np, "allwinner,sun50i-a64-mali") ||
 	    of_device_is_compatible(np, "allwinner,sun50i-h5-mali")) {
 		mali->reset = of_reset_control_get(np, NULL);
 		if (IS_ERR(mali->reset)) {
