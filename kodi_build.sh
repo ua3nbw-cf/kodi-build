@@ -99,7 +99,8 @@ python-minimal rapidjson-dev swig scons unzip uuid-dev yasm zip zlib1g-dev libgb
 libgles2-mesa-dev libwayland-dev libwayland-egl1-mesa libcec-dev doxygen git autoconf libtool build-essential \
 libopencore-amrnb-dev libopencore-amrwb-dev librtmp-dev libtheora-dev libvo-amrwbenc-dev libvpx-dev libx264-dev \
 libx265-dev libxvidcore-dev libfdk-aac-dev libavresample-dev libffi-dev libexpat1-dev libxml2-dev xutils-dev \
-libpam0g-dev libjpeg-dev libcairo2-dev libxcb-composite0-dev libxcursor-dev libxkbcommon-dev libpixman-1-dev libpugixml-dev)
+libpam0g-dev libjpeg-dev libcairo2-dev libxcb-composite0-dev libxcursor-dev libxkbcommon-dev libpixman-1-dev \
+libpugixml-dev librapidxml-dev)
 
 install_dependent_packages BUILD_KODI_ARM_DEPS_START[@]
 DEBIAN_FRONTEND=noninteractive
@@ -243,7 +244,7 @@ wget_kodi(){
         cp -PRv ../kodi-patches/* ${WLROOT}xbmc
         cd ${WLROOT}xbmc
         echo -e "$Green \n patch kodi$Color_Off \n"
-        patch -p1 <*.patch
+#        patch -p1 <*.patch
 
 	if [ $? != 0 ]; then
 	    echo -e "$Red \n Wget Error.  Terminating$Color_Off \n"
@@ -335,7 +336,7 @@ cat > ${WLROOT}ffmpeg/autogen.sh << _EOF_
 --enable-librtmp --enable-libfreetype --enable-libbluray --enable-protocol=bluray --enable-muxers --enable-encoders --enable-decoders \
 --enable-demuxers --enable-parsers --enable-bsfs --enable-protocols --enable-indevs --enable-outdevs --enable-filters --enable-neon \
 --enable-vfp --pkg-config=pkg-config --enable-zlib --enable-ffprobe --enable-libxvid --enable-libx265 --enable-libfdk-aac \
---enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libvo-amrwbenc --enable-version3 --enable-libdrm librapidxml-dev
+--enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libvo-amrwbenc --enable-version3 --enable-libdrm 
 _EOF_
         chmod 755  autogen.sh
 
