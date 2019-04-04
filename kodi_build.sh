@@ -5,14 +5,14 @@
 # Set variables
 #################################################
 
-KODI=18.0b5-Leia
-FFMPEG=4.0.3-Leia-Beta5
-IPTVSIMPLE=3.5.3-Leia
+KODI=18.1-Leia
+FFMPEG=4.0.3-Leia-18.2
+IPTVSIMPLE=3.5.3-Leia 
 #PVRHTS=4.4.2-Leia
-WAYLAND=1.16.0
-WAYLANDPROTOCOLS=1.16
+WAYLAND=1.17.0
+WAYLANDPROTOCOLS=1.17
 WESTON=4.0.0
-LIBDRM=libdrm-2.4.96
+LIBDRM=libdrm-2.4.97
 WLROOT=$PWD/build/
 #################################################
 ### PKG Vars ###
