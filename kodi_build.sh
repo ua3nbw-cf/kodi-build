@@ -335,7 +335,7 @@ cat > ${WLROOT}ffmpeg/autogen.sh << _EOF_
 --enable-librtmp --enable-libfreetype --enable-libbluray --enable-protocol=bluray --enable-muxers --enable-encoders --enable-decoders \
 --enable-demuxers --enable-parsers --enable-bsfs --enable-protocols --enable-indevs --enable-outdevs --enable-filters --enable-neon \
 --enable-vfp --pkg-config=pkg-config --enable-zlib --enable-ffprobe --enable-libxvid --enable-libx265 --enable-libfdk-aac \
---enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libvo-amrwbenc --enable-version3 --enable-libdrm 
+--enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libvo-amrwbenc --enable-version3 --enable-libdrm librapidxml-dev
 _EOF_
         chmod 755  autogen.sh
 
